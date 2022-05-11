@@ -201,3 +201,64 @@ Cómo descargar el IDE de Eclipse.
 El concepto de perspectiva.
 Cómo crear un proyecto Java, incluidas las clases y cómo ejecutarlo.
 Cómo mostrar diferentes views.
+
+# TYPE CASTING
+
+Como se ve en los videos, cuando intentamos poner un valor entero en una variable de tipo double, Java no muestra un error. Sin embargo, cuando intentamos poner un doble en una variable del tipo entero, tenemos un error de compilación.
+
+Esta propiedad se produce porque Java convierte implícitamente de un tipo más pequeño a tipos "más grandes". De entero a double, por ejemplo.
+
+Lo contrario no es cierto porque hay pérdida de datos cuando se realiza la conversión. Resultando en un " type mismatch" que muestra que esta instrucción es de tipos incompatibles.
+
+Para realizar una conversión donde puede haber pérdida de información, es necesario hacer un type casting. Vea las instrucciones a continuación.
+
+# int edad = (int) 30.0;
+
+En el caso anterior, es explícito que se realizará la conversión de doublé a entero. Vea cómo funciona el cast implícito y explícito en la tabla a continuación.
+
+
+#   DE/PARA	 byte	short	char	int	    long	float	double
+    byte	----	Impl.	(char)	Impl.	Impl.	Impl.	Impl.
+    short	(byte)	----	(char)	Impl.	Impl.	Impl.	Impl.
+    char	(byte)	(short)	----	Impl.	Impl.	Impl.	Impl.
+    int	    (byte)	(short)	(char)	----	Impl.	Impl.	Impl.
+    long	(byte)	(short)	(char)	(int)	----	Impl.	Impl.
+    float	(byte)	(short)	(char)	(int)	(long)	----	Impl.
+    double	(byte)	(short)	(char)	(int)	(long)	(float)	----
+
+
+# Para comparar cada tipo primitivo más claramente, la siguiente tabla muestra el tamaño de cada uno.
+
+#    TIPO	TAMAÑO
+    boolean	1 bit
+    byte	1 byte
+    short	2 bytes
+    char	2 bytes
+    int	    4 bytes
+    float	4 bytes
+    long	8 bytes
+    double	8 bytes
+
+
+# Resumen
+En esta clase comenzamos nuestro aprendizaje con variables y tipos primitivos de Java. Los tipos vistos con más detalle fueron int (entero) y double (decimal). Los cuales usamos para hacer operaciones aritméticas y también concatenar con texto.
+
+Durante el capítulo hablamos de buenas prácticas al nombrar clases y también variables. Comenzamos las clases con mayúscula y nuestras funciones y variables con minúsculas. Hablaremos más sobre esto en el futuro.
+
+Fue posible comprender un poco de conversión de tipos y cómo podemos pasar un valor de un tipo para una variable de otro. En algunos casos no necesitamos hacer nada, ya que el casting es implícito y en otros debemos dejar en claro al compilador que sabemos lo que estamos haciendo, mostrando entre paréntesis el tipo que queremos usar.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
