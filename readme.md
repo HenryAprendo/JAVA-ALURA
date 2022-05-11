@@ -163,3 +163,41 @@ Mac
 
 4.3) En esta nueva parte, haz clic en Install y espera. Cuando finalice la instalación, haz clic en el Launch para abrir Eclipse automáticamente.
 
+# Ejecución de un programa en eclipse
+Ha llegado el momento de ejecutar nuestro código en Eclipse, sigue los pasos a continuación:
+
+1) Cuando iniciamos Eclipse, nos pedirá que seleccionemos un " workspace ", que es donde se almacenarán tus proyectos. Si deseas personalizar esto, haz clic en Examinar ... y selecciona tu carpeta. En este curso utilizaremos la carpeta del workspace en sí.
+
+2) Cierra la página de Welcome y comenzaremos Eclipse de la forma en que normalmente lo encontramos.
+
+3) Haz clic en File y coloca el cursor en la línea new y verás que Eclipse nos dará algunas opciones. Elige Java project.
+
+4) En esta nueva ventana, nombraremos nuestro proyecto, elegiremos el nombre sintaxe-basica, recuerda verificar la versión de Java utilizada.
+
+5) Observa que tenemos un nuevo proyecto en View Package Explorer, guardaremos nuestro proyecto en esta carpeta src que se creó.
+
+6) En el directorio src, haz clic derecho, coloca el cursor en new y elige class.
+
+7) En esta nueva ventana, crearemos la clase con el nombre Programa, no te preocupes por las diversas opciones que nos ofrezca Eclipse. Haz clic en finish y tendremos nuestra clase de programa.
+
+8) Antes de colocar System.out.println, escribe el método main. Ten la seguridad de que entenderemos mejor el método main durante el curso. Nuestro código se verá así:
+
+public class Programa {
+
+    public static void main(String[] args){
+        System.out.println("Hola mundo");
+    }
+
+}
+
+9) Ten en cuenta que, durante la escritura, Eclipse intenta inferir algunas cosas, además de cerrar las comillas automáticamente.
+
+10) Para ejecutar nuestro código, en la parte superior de Eclipse, haz clic en Run, luego en Run As y elige Java Application.
+
+# Resumen
+El papel de un IDE y su diferencia con respecto a un editor.
+Cómo descargar el IDE de Eclipse.
+¿Para qué sirve workspace?
+El concepto de perspectiva.
+Cómo crear un proyecto Java, incluidas las clases y cómo ejecutarlo.
+Cómo mostrar diferentes views.
