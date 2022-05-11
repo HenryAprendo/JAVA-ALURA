@@ -252,7 +252,11 @@ Fue posible comprender un poco de conversión de tipos y cómo podemos pasar un 
 
 # main ctrl space me genera el metodo main automaticamente
 
-
+# Resumen
+El concepto y cómo declarar char y String.
+Cómo concatenar Strings.
+Atajo para crear método main.
+Las variables almacenan valores y no referencias.
 
 
 
