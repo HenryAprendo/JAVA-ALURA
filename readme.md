@@ -248,6 +248,14 @@ Durante el capítulo hablamos de buenas prácticas al nombrar clases y también 
 Fue posible comprender un poco de conversión de tipos y cómo podemos pasar un valor de un tipo para una variable de otro. En algunos casos no necesitamos hacer nada, ya que el casting es implícito y en otros debemos dejar en claro al compilador que sabemos lo que estamos haciendo, mostrando entre paréntesis el tipo que queremos usar.
 
 
+# Cuarta sesión: Caracteres
+
+# main ctrl space me genera el metodo main automaticamente
+
+
+
+
+
 
 
 
