@@ -259,6 +259,20 @@ Atajo para crear método main.
 Las variables almacenan valores y no referencias.
 
 
+# Quinta sesión: Condicionales
+
+En esta clase, aprendimos:
+
+Cómo usar el if.
+Cómo usar las operaciones lógicas AND (&&) y OR (||).
+Trabajar con el alcance de las variables.
+También hemos visto algunos atajos en Eclipse:
+
+main Ctrl + espacio, para generar el método main.
+ctrl + shift + f, para formatear el código fuente.
+sysout + ctrl + espacio, para generar la instrucción System.out.println ().
+
+
 
 
 
