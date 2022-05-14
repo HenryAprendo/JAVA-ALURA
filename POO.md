@@ -13,3 +13,45 @@ Una clase es una especificación de un tipo, que define atributos y comportamien
 # Objeto
 Un objeto es una instancia de una clase donde podemos definir valores para sus atributos.
 Para crear una instancia necesitamos usar la palabra clave new
+
+
+
+# Referencias a otro objeto
+    public class Cuenta {
+        double saldo;
+    }
+
+    public class Test {
+
+        public static void main(String[] args) {
+
+            Cuenta miCuenta = new Cuenta();
+            miCuenta.saldo = 500.0;
+            Cuenta otraCuenta = miCuenta;
+            otraCuenta.saldo += 1000.0;
+
+            System.out.println(miCuenta.saldo);
+        }
+    }
+
+    Imprime 1500, porque las dos referencias (miCuenta y otraCuenta) apuntan al mismo objeto, lo que hace que se agregue la cantidad 1000 a los 500 anteriores.
+    Como las dos variables se refieren al mismo objeto en la memoria, el valor de miCuenta cambiará por la asignación realizada en otraCuenta.
+
+# Resumen
+En esta clase aprendimos sobre atributos y creación de objetos.
+
+Vimos:
+
+¿Qué es una clase? Cómo crear una clase Cómo crear un objeto o instancia de una clase ¿Qué son los atributos? Cómo definir y ver los valores de los atributos ¿Cómo funciona la asignación de una referencia a una variable?
+
+¡Veremos más sobre las clases en la próxima clase! Ahora no solo sus características sino también su comportamiento. ¡Solo comencemos! ¡Te espero allí!    
+
+
+
+
+
+
+
+
+
+
