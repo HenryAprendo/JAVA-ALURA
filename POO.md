@@ -47,7 +47,10 @@ Vimos:
 ¡Veremos más sobre las clases en la próxima clase! Ahora no solo sus características sino también su comportamiento. ¡Solo comencemos! ¡Te espero allí!    
 
 
-
+# METODOS
+* Un método puede tener ninguno, uno o más parámetros.
+* Un método define el comportamiento de un objeto. Este es el objetivo de los métodos, definir lo que un objeto sabe hacer. El comportamiento   se implementa dentro del método.
+* Los ejemplos de nombres de métodos son: transferir, transferirPara, transferisParaOtroTitular. Tenga en cuenta que todos los nombres comienzan con una letra minúscula y luego usan "CamelCase".
 
 
 
