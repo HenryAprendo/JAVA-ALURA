@@ -3,10 +3,25 @@ public class Metodos {
 	public static void main(String[] args) {
 		
 		Cuenta miCuenta = new Cuenta();
-		System.out.println(miCuenta.saldo);
-		miCuenta.depositar(5000);
+		miCuenta.depositar(1000);
+		System.out.println("El saldo inicial de miCuenta es: " + miCuenta.saldo);
 		
-		System.out.println(miCuenta.saldo);
-
+		Cuenta cuentaDeJimena = new Cuenta();
+		cuentaDeJimena.depositar(2000);
+		System.out.println("El saldo actual de la cuentaDeJimena es: " + cuentaDeJimena.saldo);
+		
+		boolean puedeTransferir = cuentaDeJimena.transferir(500, miCuenta);
+		
+		if (puedeTransferir) {
+			System.out.println("¡Transferencia exitosa!");
+		}
+		else {
+			System.out.println("No fue posible hacer la transferencia");
+		}
+		
+		System.out.println("El saldo de la cuentaDeJimena despues de transferir es: " + cuentaDeJimena.saldo);
+		
+		System.out.println("El saldo de miCuenta despues de recibir la transferencia es: " + miCuenta.saldo);
+		
 	}
 }
