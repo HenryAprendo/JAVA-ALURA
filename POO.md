@@ -53,7 +53,16 @@ Vimos:
 * Los ejemplos de nombres de métodos son: transferir, transferirPara, transferisParaOtroTitular. Tenga en cuenta que todos los nombres comienzan con una letra minúscula y luego usan "CamelCase".
 
 
+# Referecias y relaciones de objetos:
+Aprendimos en este capítulo:
 
+• Darse cuenta de la relación entre clases a través de la composición;
+
+• Ventajas de aislar información repetida en otra clase (abstracción);
+
+• Detalles de la composición;
+
+• NullPointerException para atributos no inicializados y su cuidado.
 
 
 

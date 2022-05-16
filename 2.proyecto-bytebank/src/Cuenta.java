@@ -4,7 +4,7 @@ public class Cuenta {
 	double saldo;
 	int agencia;
 	int numero;
-	String titular;
+	Cliente titular;
 
 	public void depositar(double valor) { // void indica que el método no retorna nada sino solo ejecuta algo
 		this.saldo += valor;
