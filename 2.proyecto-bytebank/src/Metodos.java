@@ -4,11 +4,11 @@ public class Metodos {
 		
 		Cuenta miCuenta = new Cuenta();
 		miCuenta.depositar(1000);
-		System.out.println("El saldo inicial de miCuenta es: " + miCuenta.saldo);
+		System.out.println("El saldo inicial de miCuenta es: " + miCuenta.getSaldo());
 		
 		Cuenta cuentaDeJimena = new Cuenta();
 		cuentaDeJimena.depositar(2000);
-		System.out.println("El saldo actual de la cuentaDeJimena es: " + cuentaDeJimena.saldo);
+		System.out.println("El saldo actual de la cuentaDeJimena es: " + cuentaDeJimena.getSaldo());
 		
 		boolean puedeTransferir = cuentaDeJimena.transferir(500, miCuenta);
 		
@@ -19,9 +19,9 @@ public class Metodos {
 			System.out.println("No fue posible hacer la transferencia");
 		}
 		
-		System.out.println("El saldo de la cuentaDeJimena despues de transferir es: " + cuentaDeJimena.saldo);
+		System.out.println("El saldo de la cuentaDeJimena despues de transferir es: " + cuentaDeJimena.getSaldo());
 		
-		System.out.println("El saldo de miCuenta despues de recibir la transferencia es: " + miCuenta.saldo);
+		System.out.println("El saldo de miCuenta despues de recibir la transferencia es: " + miCuenta.getSaldo());
 		
 	}
 }

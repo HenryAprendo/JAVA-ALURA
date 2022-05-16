@@ -2,14 +2,14 @@
 public class Referencias {
 	public static void main(String[] args) {
 		Cuenta primeraCuenta = new Cuenta();
-		primeraCuenta.saldo = 200;
-		System.out.println("El saldo de primeraCuenta es: " + primeraCuenta.saldo);
+		primeraCuenta.depositar(200);
+		System.out.println("El saldo de primeraCuenta es: " + primeraCuenta.getSaldo());
 		
 		Cuenta segundaCuenta = primeraCuenta;	
-		System.out.println("El saldo de segundaCuenta es: " + segundaCuenta.saldo);
+		System.out.println("El saldo de segundaCuenta es: " + segundaCuenta.getSaldo());
 		
-		segundaCuenta.saldo += 500;
-		System.out.println("El saldo de primeraCuenta es: " + primeraCuenta.saldo);
+		segundaCuenta.depositar(500);;
+		System.out.println("El saldo de primeraCuenta es: " + primeraCuenta.getSaldo());
 
 		//En este caso segundaCuenta es una referencia a primeraCuenta, por lo cual ambas hacen referencia al mismo y unico objeto tipo
 		//Cuenta creado en memoria. De tal forma que al modificar el valor del saldo por parte de segundaCuenta tambien primeraCuenta se  
