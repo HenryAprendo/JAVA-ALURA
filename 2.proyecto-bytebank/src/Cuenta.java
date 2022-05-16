@@ -4,7 +4,7 @@ public class Cuenta {
 	private double saldo;
 	private int agencia;
 	private int numero;
-	Cliente titular;
+	private Cliente titular = new Cliente();
 
 	public void depositar(double valor) { // void indica que el método no retorna nada sino solo ejecuta algo
 		this.saldo += valor;
@@ -45,6 +45,14 @@ public class Cuenta {
 	
 	public int getAgencia() {
 		return this.agencia;
+	}
+	
+	public Cliente getTitular() {
+		return this.titular;
+	}
+	
+	public void setTitular(Cliente titular) {
+		this.titular = titular;
 	}
 }
 

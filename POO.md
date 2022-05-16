@@ -66,4 +66,5 @@ Aprendimos en este capítulo:
 
 
 
-
+# Atributos privados
+Atributos privados, restringiendo el acceso a los atributos. Encapsulación de código Métodos de lectura de atributos, los getters Métodos para modificar atributos, los setters Getters y Setters de referencia
