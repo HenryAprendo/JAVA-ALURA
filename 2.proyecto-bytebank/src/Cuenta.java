@@ -7,6 +7,8 @@ public class Cuenta {
 	private int numero;
 	private Cliente titular = new Cliente();
 	
+	private static int total = 0;
+	
 	//Constructor
 	public Cuenta(int agencia) {
 		if (agencia <= 0) {
@@ -16,6 +18,9 @@ public class Cuenta {
 		else {
 			this.agencia = agencia;
 		}
+		this.saldo = 0;
+		
+		Cuenta.total++;
 	}
 
 	//Métodos
@@ -61,6 +66,7 @@ public class Cuenta {
 		return this.agencia;
 	}
 	
+	
 	public Cliente getTitular() {
 		return this.titular;
 	}
@@ -68,6 +74,13 @@ public class Cuenta {
 	public void setTitular(Cliente titular) {
 		this.titular = titular;
 	}
+	
+	//Acesso a variables estatica
+	public static int getTotal() {
+		return Cuenta.total;
+	}
+	
+
 }
 
 
