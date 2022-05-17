@@ -10,7 +10,7 @@ public class InstanciaCliente {
 		//En este caso, la instancia cliente es enviada como valor o referencia al atributo titular de la clase Cuenta.
 		//De ésta forma estamos relacionando  o referenciando dos instancias de clases entre si.
 		
-		Cuenta cuentaDeDiego = new Cuenta();
+		Cuenta cuentaDeDiego = new Cuenta(1515);
 		//cuentaDeDiego.titular = ;
 		//System.out.println(cuentaDeDiego.titular.nombre);
 		
@@ -22,16 +22,16 @@ public class InstanciaCliente {
 		Cliente clienteDos = new Cliente();
 		//System.out.println(clienteDos.documento); //Imprime null
 		
-		Cuenta cuentaDeHenry = new Cuenta();
+		Cuenta cuentaDeHenry = new Cuenta(1516);
 		//cuentaDeHenry.titular = clienteDos;
 		//System.out.println(cuentaDeHenry.titular.nombre); // Imprime null
 		
-		Cuenta cuentaNueva = new Cuenta();
+		Cuenta cuentaNueva = new Cuenta(1517);
 		//System.out.println(cuentaNueva.titular.documento);  //Imprime un error por que no hay una instancia Cliente asociada al atributo titular
 		
 		
 		//Otra forma de referenciar objetos es instanciarlos directamente en el atributo, de esta forma:
-		Cuenta otraCuenta = new Cuenta();
+		Cuenta otraCuenta = new Cuenta(1518);
 		//otraCuenta.titular = new Cliente();
 		//otraCuenta.titular.nombre = "Richard";
 		//System.out.println(otraCuenta.titular.nombre); 		

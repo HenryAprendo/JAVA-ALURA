@@ -5,7 +5,7 @@ public class Encapsulamiento {
 		Cliente cliente = new Cliente();
 		cliente.setNombre("Orlando");
 		
-		Cuenta cuenta = new Cuenta();
+		Cuenta cuenta = new Cuenta(1120);
 		cuenta.setTitular(cliente);
 		
 		String nombre = cuenta.getTitular().getNombre();

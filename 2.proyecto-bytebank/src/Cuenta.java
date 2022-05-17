@@ -1,11 +1,24 @@
 
 public class Cuenta {
 
+	//Atributos
 	private double saldo;
 	private int agencia;
 	private int numero;
 	private Cliente titular = new Cliente();
+	
+	//Constructor
+	public Cuenta(int agencia) {
+		if (agencia <= 0) {
+			System.out.println("No se permiten valores negativos");
+			this.agencia = 1;
+		}
+		else {
+			this.agencia = agencia;
+		}
+	}
 
+	//Métodos
 	public void depositar(double valor) { // void indica que el método no retorna nada sino solo ejecuta algo
 		this.saldo += valor;
 	}
@@ -34,14 +47,15 @@ public class Cuenta {
 		return this.saldo;
 	}
 	
-	public void setAgencia(int agencia) {
-		if (agencia > 0) {
-			this.agencia = agencia;
-		}
-		else {
-			System.out.println("No estan permitidos valores negativos");
-		}
-	}
+	//public void setAgencia(int agencia) {
+	//if (agencia > 0) {
+	//		this.agencia = agencia;
+	//	}
+	//	else {
+	//		System.out.println("No estan permitidos valores negativos");
+	//	}
+	//}
+	//Con el constructor no tiene sentido usar este método.
 	
 	public int getAgencia() {
 		return this.agencia;

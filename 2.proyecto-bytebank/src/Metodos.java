@@ -2,11 +2,11 @@
 public class Metodos {
 	public static void main(String[] args) {
 		
-		Cuenta miCuenta = new Cuenta();
+		Cuenta miCuenta = new Cuenta(2020);
 		miCuenta.depositar(1000);
 		System.out.println("El saldo inicial de miCuenta es: " + miCuenta.getSaldo());
 		
-		Cuenta cuentaDeJimena = new Cuenta();
+		Cuenta cuentaDeJimena = new Cuenta(2021);
 		cuentaDeJimena.depositar(2000);
 		System.out.println("El saldo actual de la cuentaDeJimena es: " + cuentaDeJimena.getSaldo());
 		
