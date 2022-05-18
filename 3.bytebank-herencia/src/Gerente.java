@@ -17,6 +17,7 @@ public class Gerente extends Funcionario {
 	//Sobre-escritura de métodos.
 	//La palabra reservada super, me permite acceder a métodos de la clase padre.
 	public double getBonificacion() {
+		System.out.println("Ejecutando desde Gerente");
 		return super.getSalario() + super.getBonificacion();
 	}
 }

@@ -57,3 +57,11 @@ La sobrecarga no tiene en cuenta la visibilidad o retorno del método, solo los 
 * como aumentar la visibilidad de un miembro (atributo, método) a través de protected.
 * cómo acceder o llamar un miembro (atributo, método) a través de super.
 * cómo redefinir un método a través de la sobreescritura. En la próxima clase veremos un nuevo beneficio de la herencia, el Polimorfismo. ¡Aguarda!
+
+# Implementado polimorfismo
+En esta clase aprendimos que:
+
+los objetos no cambian de tipo;
+la referencia puede cambiar, y ahí es donde entra el polimorfismo;
+el polimorfismo permite utilizar referencias más genéricas para comunicarse con un objeto;
+el uso de referencias más genéricas permite desacoplar sistemas.
