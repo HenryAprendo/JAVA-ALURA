@@ -1,7 +1,7 @@
 
 public class TestControlBonificacion {
 	public static void main(String[] args) {
-		Funcionario funcionario = new Funcionario();
+		Funcionario funcionario = new Contador();
 		funcionario.setSalario(3000);
 		
 		Gerente gerente = new Gerente();
@@ -23,7 +23,7 @@ public class TestControlBonificacion {
 		//es decir al de la propia clase.
 		//Como Contador no lo tiene definido hereda el de la clase Funcionario, a menos que se defina y se reescriba el método getBonificación.
 		
-		//ESTO ES UNA FORMA DE IMPLEMENTAR POLIMORFISMO
+		//ESTO ES UNA FORMA DE IMPLEMENTAR POLIMORFISMO POR REFERENCIA A UNA CLASE PADRE.
 		
 	}
 }

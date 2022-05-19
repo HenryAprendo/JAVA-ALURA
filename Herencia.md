@@ -65,3 +65,11 @@ los objetos no cambian de tipo;
 la referencia puede cambiar, y ahí es donde entra el polimorfismo;
 el polimorfismo permite utilizar referencias más genéricas para comunicarse con un objeto;
 el uso de referencias más genéricas permite desacoplar sistemas.
+
+Conceptos de herencia, constructores y polimorfismo
+Usando la anotación @Override
+Los constructores no se heredan
+Se puede llamar a un constructor de clase madre mediante super()
+
+# Clases Abstractas
+Una clase abstracta representa un concepto, algo abstracto, y el compilador no permite instanciar un objeto de esa clase. Para crear una instancia, es necesario crear primero una clase hija no abstracta.
