@@ -1,8 +1,10 @@
 
-public class Cliente {
+public class Cliente implements Autenticable {
 	private String nombre;
 	private String telefono;
 	private String documento;
+	
+	private String clave;
 	
 	public String getNombre() {
 		return nombre;
@@ -25,6 +27,20 @@ public class Cliente {
 		this.documento = documento;
 	}
 	
-	
+	//Métodos de la interface autenticable que obligatoriamente se deben implementar por ser abstractos
+	//de la interface.
+	@Override
+	public void setClave(String clave) {
+		this.clave = clave;
+		
+	}
+	@Override
+	public boolean iniciarSesion(String clave) {
+		
+		if (this.clave == clave) {
+			return true;
+		}
+		return false;
+	}
 	
 }

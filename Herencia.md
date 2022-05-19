@@ -79,3 +79,23 @@ Qué son las clases abstractas
 Para qué sirven las clases abstractas
 Qué son los métodos abstractos
 Para qué sirven los métodos abstractos
+
+
+# Interfaces 
+No hay herencia múltiple en Java.
+Conceptos de interfaz.
+Diferencias entre clases abstractas e interfaces.
+Las interfaces son una alternativa a la herencia con respecto al polimorfismo
+
+
+
+
+
+
+
+
+
+
+
+
+

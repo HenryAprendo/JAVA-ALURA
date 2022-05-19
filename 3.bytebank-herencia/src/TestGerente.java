@@ -9,5 +9,6 @@ public class TestGerente {
 		System.out.println(gerente.getNombre());
 		System.out.println(gerente.iniciarSesion("1543"));
 		System.out.println(gerente.getBonificacion());
+		
 	}
 }
