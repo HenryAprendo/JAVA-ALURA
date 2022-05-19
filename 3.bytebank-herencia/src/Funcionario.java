@@ -31,11 +31,8 @@ public abstract class Funcionario {
 		this.salario += salario;
 	}
 	
-	//Bonificación
-	public double getBonificacion() {
-		System.out.println("Ejecutando desde Funcionario");
-		return this.salario * 0.05;
-	}
+	//Método abstracto, un método abstracto define solo la firma (visibilidad, retorno, nombre del método y parámetros
+	public abstract double getBonificacion();
 	
 }
 

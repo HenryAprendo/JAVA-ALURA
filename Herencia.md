@@ -73,3 +73,9 @@ Se puede llamar a un constructor de clase madre mediante super()
 
 # Clases Abstractas
 Una clase abstracta representa un concepto, algo abstracto, y el compilador no permite instanciar un objeto de esa clase. Para crear una instancia, es necesario crear primero una clase hija no abstracta.
+
+# Lo que aprendimos 
+Qué son las clases abstractas
+Para qué sirven las clases abstractas
+Qué son los métodos abstractos
+Para qué sirven los métodos abstractos

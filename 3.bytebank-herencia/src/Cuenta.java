@@ -1,8 +1,8 @@
 
-public class Cuenta {
+public abstract class Cuenta {
 
 	//Atributos
-	private double saldo;
+	protected double saldo;
 	private int agencia = 1;
 	private int numero;
 	private Cliente titular = new Cliente();
@@ -18,9 +18,7 @@ public class Cuenta {
 	}
 
 	//Métodos
-	public void depositar(double valor) { // void indica que el método no retorna nada sino solo ejecuta algo
-		this.saldo += valor;
-	}
+	public abstract void depositar(double valor);
 
 	public boolean saca(double valor) { // boolean indica que el metodo debe retornar un valor del tipo booleano
 		if (this.saldo >= valor) {
