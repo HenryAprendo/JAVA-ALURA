@@ -22,6 +22,8 @@ public class Flujo {
 			 * Manejo de Excepciones
 			 * Try: Intenta hacer...
 			 * Catch: Atrapa el error..
+			 * Pueden haber multiples catch por error
+			 * Tambien con la ayuda de | pipe, procesar varios errores en un mismo catch
 			 * 
 			 * */
 			
