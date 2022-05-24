@@ -20,12 +20,11 @@ public abstract class Cuenta {
 	//Métodos
 	public abstract void depositar(double valor);
 
-	public boolean saca(double valor) { // boolean indica que el metodo debe retornar un valor del tipo booleano
-		if (this.saldo >= valor) {
-			this.saldo -= valor;
-			return true;
+	public void saca(double valor) { // boolean indica que el metodo debe retornar un valor del tipo booleano
+		if (this.saldo < valor) {
+			throw new SaldoInsuficienteException("No tienes saldo");
 		}
-		return false;
+		this.saldo -= valor;				
 	}
 
 	public boolean transferir(double valor, Cuenta cuenta) {
