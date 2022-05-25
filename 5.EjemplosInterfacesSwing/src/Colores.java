@@ -28,10 +28,10 @@ public class Colores extends JFrame implements ItemListener {
 	
 	
 	public static void main(String[] args) {
-		Colores color = new Colores();
-		color.setBounds(0,0,300,150);
-		color.setVisible(true);
-		color.setLocationRelativeTo(null);
+		Colores color1 = new Colores();
+		color1.setBounds(0,0,300,150);
+		color1.setVisible(true);
+		color1.setLocationRelativeTo(null);
 	}
 
 }

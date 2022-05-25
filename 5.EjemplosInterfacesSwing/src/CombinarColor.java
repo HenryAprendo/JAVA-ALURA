@@ -27,10 +27,10 @@ public class CombinarColor extends JFrame implements ActionListener {
 		label2.setBounds(10,50,70,20);
 		add(label2);
 		combo2 = new JComboBox();
-		combo2.setBounds(120,10,70,30);
+		combo2.setBounds(120,50,70,30);
 		add(combo2);
 		for (int i = 0; i <= 255; i++ ) {
-			combo1.addItem(String.valueOf(i));
+			combo2.addItem(String.valueOf(i));
 		}
 		
 		//Azul
@@ -38,10 +38,10 @@ public class CombinarColor extends JFrame implements ActionListener {
 		label2.setBounds(10,90,70,20);
 		add(label2);	
 		combo3 = new JComboBox();
-		combo3.setBounds(120,10,70,30);
+		combo3.setBounds(120,90,70,30);
 		add(combo3);
 		for (int i = 0; i <= 255; i++ ) {
-			combo1.addItem(String.valueOf(i));
+			combo3.addItem(String.valueOf(i));
 		}
 		
 		//Button
@@ -62,11 +62,18 @@ public class CombinarColor extends JFrame implements ActionListener {
 			int verde = Integer.parseInt(cad2);
 			int azul = Integer.parseInt(cad3);
 			
-			Color color = new Color(rojo,verde,azul);
-			button.setBackground(color);
+			Color color2 = new Color(rojo,verde,azul);
+			button.setBackground(color2);
 		}
 	}
 	
+	public static void main(String[] args) {
+		CombinarColor fondo = new CombinarColor();
+		fondo.setBounds(0,0,300,300);
+		fondo.setVisible(true);
+		fondo.setLocationRelativeTo(null);
+		
+	}
 	
 }
 
