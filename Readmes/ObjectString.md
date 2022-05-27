@@ -88,3 +88,67 @@ public void sacar(double valor) throws SaldoInsuficienteException {
 En la lista de proyectos mostrados, asegúrese de seleccionar el proyecto bytebank-heredando-cuenta. Asegúrese de que el Javadoc command esté lleno con la ruta de la herramienta javadoc. Utilice en la opción User standard docket la ruta del proyecto padrón, sin ningún cambio. Finalmente, haga clic en el botón "Finish" para generar la documentación.
 
 7) Verifique la carpeta doc generada con la documentación. Acceda al archivo doc/resources/index.html. Esta página es el punto de entrada para la documentación. Navegue por las clases documentadas comprobando el resultado.
+
+
+
+# Distrubacion de codigo JAR
+Sabemos que a través de jars podemos facilitar el intercambio de nuestro código entre equipos. Ha llegado el momento de practicar.
+
+En Eclipse, haciendo clic derecho en el proyectobytebank-heredado-cuenta, seleccione la opción export. Se mostrarán varias opciones de exportación, seleccione las que están dentro del grupo java y dentro de ella la opción JAR File haga clic en "NEXT". Veamos el siguiente paso a seguir.
+
+En el proyecto proyectobytebank-heredado-cuenta, seleccione solo la carpeta src. También desmarque los archivos .classpath y .project. Asegúrese de que solo esté marcada la opción "Export generated class files and resources". En "Jar File", seleccione una carpeta de fácil acceso en la que se guardará el archivo jar que vamos a crear. Haga clic en Finish y, si se muestra alguna advertencia, ignórela por completo.
+
+Verifique la existencia del archivo jar creado.
+
+Para probar el archivo jar recién creado, cree un nuevo proyecto java llamado bytebank-biblioteca. Cierre el resto de proyectos para que sea más fácil concentrarse en el nuevo proyecto.
+
+Con el botón derecho en el nuevo proyecto, elija New -> Folder. Para el nombre del folder, elija libs.
+
+Copie el jar exportado en la carpeta libs recién creada.
+
+Copiar el archivo jar en un proyecto no es suficiente, debe estar en el class path. Haga clic con el botón derecho en el archivo jar dentro de la carpeta libs y elija la opción add to build path. Vea si seleccionó la opción "Package Explorer". Si tiene la opción Navigator seleccionada, no aparecerá Build Path
+
+Ahora que nuestro proyecto ve el jar creado, cree la clase TestLibreria en el paquete br.com.alura.bytebank. Su propósito es importar algunas clases del jar importado:
+
+package br.com.alura.bytebank;
+
+
+import br.com.bytebank.banco.modelo.Cuenta;
+import br.com.bytebank.banco.modelo.CuentaCorriente;
+
+
+public class TestLiberia {
+
+
+    public static void main(String[] args) {
+        Cuenta c = new CuentaCorriente(123, 321);
+    }
+}
+
+
+Para saber más: Maven
+PRÓXIMA ACTIVIDAD
+
+Java es una plataforma de desarrollo completa que destaca por su gran cantidad de proyectos de código abierto (open source). Para la mayoría de problemas en el día a día del desarrollador ya existen librerías para solucionar. Es decir, si te gustaría conectarte con una base de datos, o trabajar en desarrollo web, en el área de ciencia de datos, creación de servicios o Android, ya existen librerías para esto, muchas veces más de una.
+
+Existe la necesidad de organizar, centralizar y versionar los JARs de esas librerías y administrar las dependencias entre ellos. Para solucionar esto, se crearon herramientas específicas y en el mundo Java se destacó Maven. Maven organiza los JARs (código compilado, código fuente y documentación) en un repositorio central que es público y se puede buscar:
+
+mvnrepository.com
+
+Allí puede ver e incluso descargar los archivos JARs, pero lo mejor es que la herramienta Maven puede hacer esto por usted.
+
+Nota: si es un usuario de Linux, Maven es muy similar a los administradores de apt o rpm. En MacOS existe brew con el mismo propósito. En el mundo .Net tenemos nuget y la plataforma node.js usa npm. La gestión de dependencias es un problema cotidiano para el desarrollador, y cada sistema o plataforma tiene su propia solución.
+
+# aprendimos
+¿Qué aprendimos?
+
+En esta sección más ligera vimos y aprendimos:
+
+Qué comentarios y tags (anotaciones) usar para definir el javadoc
+Cómo generar javadoc en Eclipse
+Que javadoc es una documentación para desarrolladores
+Que las clases estándar de Java también usan javadoc
+Cómo crear nuestra propia librería a través de JAR (J*ava *ARchive)
+Cómo importar librerías al nuevo proyecto
+Cómo crear un JAR ejecutable
+En la siguiente clase conoceremos el paquete java.lang.
