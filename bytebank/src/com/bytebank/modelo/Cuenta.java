@@ -1,16 +1,34 @@
 package com.bytebank.modelo;
 
+/**
+ * Cuenta crea instancias de CuentaAhorro y CuentaCorriente 
+ * 
+ * @version 1.0.0
+ * @author Henry
+ *
+ */
 public abstract class Cuenta {
 
 	//Atributos
-	protected double saldo;
+	public double saldo;
 	private int agencia = 1;
 	private int numero;
 	private Cliente titular = new Cliente();
 	
 	private static int total = 0;
 	
-	//Constructor
+	/***
+	 * Instancia una nueva cuenta sin parametros
+	 */
+	public Cuenta() {
+		
+	}
+	
+	/**
+	 * Instancia una nueva cuenta usando agencia y numero
+	 * @param agencia
+	 * @param numero
+	 */
 	public Cuenta(int agencia, int numero) {
 		this.agencia = agencia;
 		this.numero = numero;
@@ -21,6 +39,10 @@ public abstract class Cuenta {
 	//Métodos
 	public abstract void depositar(double valor);
 
+	/**
+	 * Éste método retira dinero de una cuenta y si ocurre un error lanza una excepción
+	 * @param valor
+	 */
 	public void saca(double valor) { // boolean indica que el metodo debe retornar un valor del tipo booleano
 		if (this.saldo < valor) {
 			throw new SaldoInsuficienteException("No tienes saldo");
