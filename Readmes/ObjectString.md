@@ -152,3 +152,17 @@ Cómo crear nuestra propia librería a través de JAR (J*ava *ARchive)
 Cómo importar librerías al nuevo proyecto
 Cómo crear un JAR ejecutable
 En la siguiente clase conoceremos el paquete java.lang.
+
+
+
+# JAVA.LANG CLASE STRING
+
+En esta clase aprendimos y sabemos:
+
+El package java.lang es el único paquete que no necesita ser importado
+Tiene clases fundamentales que cualquier aplicación necesita, como la clase String y System
+Los objetos de la clase String son inmutables y usamos una sintaxis literal para crear (objeto literal)
+Cualquier método para cambiar la clase String devuelve un nuevo String que representa el cambio
+La clase String es una CharSequence
+Si necesitamos concatenar muchos String debemos usar la clase StringBuilder
+Vimos varios métodos de la clase String como trim, charAt, contains, isEmpty, length, indexOf, replace
