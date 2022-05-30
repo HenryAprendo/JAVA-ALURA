@@ -94,6 +94,13 @@ public abstract class Cuenta {
 		return Cuenta.total;
 	}
 	
+	@Override
+	public String toString() {
+		
+		String cuenta = "Número: " + this.numero + ", agencia: " + this.agencia;
+		return cuenta;
+	}
+	
 
 }
 

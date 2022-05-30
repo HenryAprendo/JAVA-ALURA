@@ -1,5 +1,7 @@
 package com.bytebank.test;
 
+import com.bytebank.modelo.CuentaAhorro;
+
 public class TestString {
 	public static void main(String[] args) {
 		String nombre = "Alura";
@@ -27,7 +29,19 @@ public class TestString {
 		System.out.println("Contiene la cadena de valores: " + cualidad.contains("petu"));
 		
 		
+		Object cuenta = new CuentaAhorro(344, 544);	
+		printLine(caracter);
+		printLine(indice);
+		printLine(cuenta);
+		printLine(new CuentaAhorro(314, 789));
+		
 	}
+	
+	public static void printLine(Object valor) {
+		System.out.println(valor.toString());
+	}
+	
+	
 }
 
 /**
