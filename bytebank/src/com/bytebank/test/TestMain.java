@@ -4,6 +4,12 @@ public class TestMain {
 
 	public static void main(String[] args) {
 		
+		//El método tambien se le envian argumentos por consola
+		for (int i = 0; i < args.length; i++ ) {
+			System.out.println(args[i]);
+		}
+		
+		
 		//Forma clasica de declarar arrays
 		int[] edades = new int[5];
 		
