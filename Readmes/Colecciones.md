@@ -70,10 +70,42 @@ Para recibir valores al llamar al programa Java en la línea de comando, podemos
 ¡En la próxima clase comenzaremos a hablar de listas! Espere :)
 
 
+# ArrayList de Java.util 
 
+Otras formas de inicialización
 
+Lista con capacidad predefinida.
 
+Decíamos que el ArrayList es un array dinámico, es decir, debajo de la tela se usa un array, pero sin preocuparse por los detalles y limitaciones.
 
+Ahora piense que necesita crear una lista que represente a los 26 estados de Brasil. Le gustaría usar un ArrayList para "escapar" del array, pero sabe que ArrayList crea un array automáticamente, del tamaño que la clase considere conveniente.
+
+¿No hay alguna forma de crear esta lista definiendo el tamaño del array? Por supuesto que lo es y es muy sencillo. El constructor de la clase ArrayList es sobrecargado y tiene un parámetro que recibe la capacidad:
+
+ArrayList lista = new ArrayList(26); //capacidad inicial
+
+La lista sigue siendo dinámica, ¡pero el tamaño de la matriz inicial es 26!
+
+Lista a partir de otra
+
+# Otra forma de inicializar una lista es basada en otra que es muy común en el día a día. Para esto, ArrayList tiene un constructor más que recibe la lista base:
+
+ArrayList lista = new ArrayList(26); //capacidad inicial
+lista.add("RJ");
+lista.add("SP");
+//otros estados
+ArrayList nueva = new ArrayList(lista); //creando basada en la primera lista
+
+# Que aprendimos
+
+En esta clase comenzamos a hablar sobre la lista y llegamos a conocer la clase java.util.ArrayList. Aprendimos:
+
+Que la clase java.util.ArrayList encapsula el uso de array y ofrece varios métodos de más alto nivel.
+Que una lista guarda referencias.
+Cómo usar los métodos size, get, remove.
+Cómo usar foreach para iterar a través de ArrayList.
+Que los generics parametrizan clases
+Que en el caso de ArrayList podemos definir el tipo de los elementos mediante generics.
 
 
 
