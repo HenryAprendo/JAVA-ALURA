@@ -107,10 +107,16 @@ Cómo usar foreach para iterar a través de ArrayList.
 Que los generics parametrizan clases
 Que en el caso de ArrayList podemos definir el tipo de los elementos mediante generics.
 
+Cómo implementar el método equals para definir la igualdad.
+Que el método equals es usado por las listas.
+Que hay más de una lista, java.util.LinkedList
+La diferencia entre ArrayList y LinkedList
+La interfaz java.util.List que define los métodos de la lista
 
-
-
-
+java.util.Vector, que es un ArrayList threadsafe.
+La interfaz java.util.Collection que es la interfaz de todas las colecciones.
+Las listas son secuencias que aceptan elementos duplicados.
+Los conjuntos (java.util.Set) también son colecciones, pero no aceptan duplicados ni listas.
 
 
 

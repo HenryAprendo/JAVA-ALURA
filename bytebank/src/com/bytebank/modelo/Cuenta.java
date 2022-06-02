@@ -80,6 +80,10 @@ public abstract class Cuenta {
 		return this.agencia;
 	}
 	
+	public int getNumero() {
+		return this.numero;
+	}
+	
 	
 	public Cliente getTitular() {
 		return this.titular;
@@ -101,6 +105,12 @@ public abstract class Cuenta {
 		return cuenta;
 	}
 	
+	@Override
+	public boolean equals(Object obj) {
+		Cuenta cuenta = (Cuenta) obj;
+		return cuenta.numero == this.getNumero() && 
+			   cuenta.agencia == this.getAgencia();	
+	}
 
 }
 
