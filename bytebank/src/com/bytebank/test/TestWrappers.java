@@ -5,7 +5,7 @@ public class TestWrappers {
 		Double numeroDoble = 33.0;		//autoboxing
 		Boolean verdadero = true;		//autoboxing
 		
-		Double numeroDoble2 = Double.valueOf(33);
+		Double numeroDoble2 = Double.valueOf(33.0);
 		System.out.println(numeroDoble2);
 		
 		String numeroString = "43";
@@ -17,6 +17,23 @@ public class TestWrappers {
 		
 		//La superclase de los Wrappers Integer, Double etc es Number, por tanto puede hacer:
 		Number entero = Integer.valueOf(50);
-		Number decimal = Double.valueOf(30.15); 
+		Number decimal = Double.valueOf(30.15);
+		
+		
+		
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
