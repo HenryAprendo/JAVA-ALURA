@@ -119,6 +119,18 @@ Las listas son secuencias que aceptan elementos duplicados.
 Los conjuntos (java.util.Set) también son colecciones, pero no aceptan duplicados ni listas.
 
 
+# WRAPPERS INTEGER, FLOAT, DOUBLE
+En esta clase nos enfocamos en las clases deWRAPPERS y aprendimos que.
+
+Para cada primitivo hay una clase llamada Wrapper.
+Para almacenar un primitivo en una colección, necesita crear un objeto que envuelva el valor.
+La creación del objeto Wrapper se llama autoboxing.
+La extracción del valor primitivo del objeto Wrapper se llama unboxing.
+El autoboxing y unboxing ocurren automáticamente.
+Las clases wrapper tienen varios métodos auxiliares, por ejemplo para el parsing.
+Todas las clases wrappers que representan un valor numérico tienen la clase java.lang.Number como madre.
+
+
 
 
 
