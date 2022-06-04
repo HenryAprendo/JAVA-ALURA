@@ -131,6 +131,19 @@ Las clases wrapper tienen varios métodos auxiliares, por ejemplo para el parsin
 Todas las clases wrappers que representan un valor numérico tienen la clase java.lang.Number como madre.
 
 
+# Lo que aprendimos
+En esta clase fundamental e importante aprendimos que:
+
+Para ordenar una lista necesita definir un criterio de ordenación
+Hay dos formas de definir este criterio
+A través de la interfaz del comparador
+A través de la interfaz Comparable (orden natural)
+El algoritmo de ordenación ya se ha implementado
+En la lista en el método de sort
+En la clase Collections por el método sort
+La clase Collections es una fachada con varios métodos auxiliares para trabajar con colecciones, principalmente listas
+Respire hondo, ya que estamos casi al final de este curso, sin embargo todavía tenemos que aprender (¡por fin!) las famosas expresiones lambda. ¿Estás listo para continuar?
+
 
 
 

@@ -5,26 +5,26 @@ import com.bytebank.modelo.*;
 
 public class TestOrdenarLista {
 	
-	public static void main(String[] args) {
-		Cuenta cc1 = new CuentaCorriente(22, 33);
+	public static <T> void main(String[] args) {
+		Cuenta cc1 = new CuentaCorriente(32, 33);
 		Cliente clienteCC1 = new Cliente();
 		clienteCC1.setNombre("Diego");
 		cc1.setTitular(clienteCC1);
 		cc1.depositar(333.0);
 		
-		Cuenta cc2 = new CuentaAhorro(22, 44);
+		Cuenta cc2 = new CuentaAhorro(12, 44);
 		Cliente clienteCC2 = new Cliente();
 		clienteCC2.setNombre("Renato");
 		cc2.setTitular(clienteCC2);
 		cc2.depositar(444.0);
 		
-		Cuenta cc3 = new CuentaCorriente(22, 11);
+		Cuenta cc3 = new CuentaCorriente(50, 11);
 		Cliente clienteCC3 = new Cliente();
 		clienteCC3.setNombre("Liam");
 		cc3.setTitular(clienteCC3);
 		cc3.depositar(111.0);
 		
-		Cuenta cc4 = new CuentaAhorro(22, 22);
+		Cuenta cc4 = new CuentaAhorro(47, 22);
 		Cliente clienteCC4 = new Cliente();
 		clienteCC4.setNombre("Edmilson");
 		cc4.setTitular(clienteCC4);
@@ -36,16 +36,12 @@ public class TestOrdenarLista {
 		lista.add(cc3);
 		lista.add(cc4);
 		
-		//Antes de ordenar
-		for (Cuenta cuenta: lista) {
-			System.out.println(cuenta);
-		}
-		
+		//Ordenado por número de cuentas
 		Comparator<Cuenta> comparator = new OrdenadorPorNumeroCuenta();
 		lista.sort(comparator);
 		
 		//Despues de ordenar
-		System.out.println("Ordenando por numero ");
+		System.out.println("Ordenando por numero de cuenta");
 		for (Cuenta cuenta: lista) {
 			System.out.println(cuenta);
 		}
@@ -53,12 +49,25 @@ public class TestOrdenarLista {
 		
 		Comparator<Cuenta> comparator1 = new OrdenarPorNombreDeTitular();
 		lista.sort(comparator1);
-		
 		System.out.println("Ordenando por nombre del titular");
 		for (Cuenta cuenta: lista) {
 			System.out.println(cuenta);
 		}
 		
+		
+		//Ordenado como se hacia en java 1.7 aun en bancos y entidades financieras
+		Collections.sort(lista);
+		System.out.println("Ordenando por orden natural definido en clase cuenta método compareTo");
+		for (Cuenta cuenta: lista) {
+			System.out.println(cuenta);
+		}
+		
+		//Para invertir el orden de la lista
+		Collections.reverse(lista);
+		
+		//Para mezclar existe el método shuffle y para girar existe el método de rotate:
+		Collections.shuffle(lista);
+		Collections.rotate(lista, 5); //rotar 5 posiciones
 		
 	}
 		

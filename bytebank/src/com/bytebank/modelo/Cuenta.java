@@ -7,7 +7,7 @@ package com.bytebank.modelo;
  * @author Henry
  *
  */
-public abstract class Cuenta {
+public abstract class Cuenta implements Comparable<Cuenta>{
 
 	//Atributos
 	public double saldo;
@@ -110,6 +110,15 @@ public abstract class Cuenta {
 		Cuenta cuenta = (Cuenta) obj;
 		return cuenta.numero == this.getNumero() && 
 			   cuenta.agencia == this.getAgencia();	
+	}
+	
+	@Override
+	public int compareTo(Cuenta o) {
+		//Define el orden natural por su número de agencia
+		return Integer.compare(this.agencia, o.agencia);
+		
+		//orden natural por saldo utilizando wrapper
+		//Double.compare(this.getSaldo(), o.getSaldo());
 	}
 
 }
