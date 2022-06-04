@@ -36,10 +36,21 @@ public class TestOrdenarLista {
 		lista.add(cc3);
 		lista.add(cc4);
 		
-		//Ordenado por número de cuentas
-		Comparator<Cuenta> comparator = new OrdenadorPorNumeroCuenta();
-		lista.sort(comparator);
+		//Ordenado por número de cuentas, con interfaces comparator
+		//Comparator<Cuenta> comparator = new OrdenadorPorNumeroCuenta();
+		//lista.sort(comparator);
 		
+		//Por medio de clases anonimas
+		System.out.println("clases anonimas");
+		
+		lista.sort(new Comparator<Cuenta>() {
+
+			@Override
+			public int compare(Cuenta o1, Cuenta o2) {
+				return Integer.compare(o1.getNumero(), o2.getNumero());
+			}
+			
+		});
 		//Despues de ordenar
 		System.out.println("Ordenando por numero de cuenta");
 		for (Cuenta cuenta: lista) {
@@ -55,7 +66,7 @@ public class TestOrdenarLista {
 		}
 		
 		
-		//Ordenado como se hacia en java 1.7 aun en bancos y entidades financieras
+		//Ordenado como se hacia en java 1.7 aun en bancos y entidaes financieras
 		Collections.sort(lista);
 		System.out.println("Ordenando por orden natural definido en clase cuenta método compareTo");
 		for (Cuenta cuenta: lista) {
@@ -75,6 +86,8 @@ public class TestOrdenarLista {
 
 
 
+//como tal no es un objeto que se puede instanciar sino una clase con una función encapsulada,
+//lo cual mejor podriamos implementar una clase anonima e implementar el método directamente.
 class OrdenadorPorNumeroCuenta implements Comparator<Cuenta> {
 
 	@Override
@@ -98,7 +111,6 @@ class OrdenadorPorNumeroCuenta implements Comparator<Cuenta> {
 	}
 	
 }
-
 
 
 class OrdenarPorNombreDeTitular implements Comparator<Cuenta> {
