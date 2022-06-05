@@ -8,7 +8,7 @@ public class TestLectura {
 		//Obtenemos el archivo
 		FileInputStream fileInputString = new FileInputStream("texto.txt");
 		//Procesamos el archivo
-		InputStreamReader inputStreamReader = new InputStreamReader(fileInputString);
+		Reader inputStreamReader = new InputStreamReader(fileInputString);
 		//Leemos el archivo
 		BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
 		
