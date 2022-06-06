@@ -1,8 +1,0 @@
-# JAVA.IO lectura de archivos
-
-En esta clase aprendimos sobre algunos temas relacionados con la lectura con Java IO:
-
-Abrir archivos;
-Lectura línea a línea del archivo y detección de su finalización;
-Uso de excepciones por parte de Java IO si la operación de lectura no sale como se esperaba;
-Clases abstractas y concretas de lectura.

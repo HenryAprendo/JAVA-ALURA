@@ -1,3 +1,2 @@
 primera linea de mi archivo generado
 segunda linea de mi archivo generado
-tercera linea de mi archivo generado
