@@ -96,6 +96,19 @@ Las clases Scanner y InputStreamReader tienen sobrecargas de constructor que tom
 
 
 
+# ¿Qué aprendimos?
+
+En esta clase, hablamos mucho sobre la serialización de objetos con Java. Vimos que:
+
+La creación del flujo binario a partir de un objeto se denomina serialización;
+La creación de un objeto a partir de una secuencia binaria se denomina deserialización;
+La clase debe implementar la interfaz java.io.Serializable;
+La serialización/deserialización funciona en cascada y también con herencia;
+Existe la palabra clave transient para indicar que el atributo no debe serializarse;
+Es una buena práctica establecer el atributo estático serialVersionUID para versionar la clase;
+La versión siempre se almacena en el flujo binario;
+Si no colocamos explícitamente el serialVersionUID, la versión se generará dinámicamente;
+Es raro utilizar la serialización, pero es un conocimiento importante, ya que será utilizado por otras bibliotecas.
 
 
 
