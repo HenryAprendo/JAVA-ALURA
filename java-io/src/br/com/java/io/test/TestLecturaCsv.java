@@ -5,6 +5,8 @@ import java.util.*;
 
 public class TestLecturaCsv {
 	public static void main(String[] args) throws FileNotFoundException {
+		
+		//Scanner scanner = new Scanner(new File("archivo.csv"), "UTF-8");
 		Scanner scanner = new Scanner(new File("archivo.csv"));
 		String linea;
 		

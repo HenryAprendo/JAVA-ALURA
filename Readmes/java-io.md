@@ -84,7 +84,15 @@ Uso de delimitador con Scanner;
 Formato de texto y números;
 Configuración de localización para formatear el texto.
 
+# ¿Qué aprendimos?
 
+En esta clase aprendí sobre Unicode, Encodings y Charsets.
+
+Conocía el problema de Encoding: donde se utilizan diferentes codepages para escribir y mostrar información en su computadora. La solución fue proporcionada por un consorcio que creó una tabla genérica llamada Unicode que contiene todos los caracteres del mundo en números llamados codepoints. La segunda parte de la solución es aplicar diferentes Encoding para definir cómo se escriben los bytes en los archivos. Las encodings son tablas que transforman cada codepoints en su carácter específico, dependiendo de una región en particular. También señaló que los encodings utilizadas dependen mucho de cada sistema operativo.
+
+Usando Windows, ha implementado un programa para verificar la implementación de Java para Unicodes y Encodings y ha conocido varias clases y métodos. Aprendió que la clase String tiene un método llamado codePointAt() para revelar el codepoint de un carácter dado desde su posición en el String. Descubrió que la clase que representa un encoding o Character Set es Charset y el método estático para devolver una referencia con el charset default es defaultCharset(). Aprendió que la clase String también tiene un método para transformar caracteres en bytes, el getBytes(), que se usa sin un argumento de entrada y usa charset predeterminado. También hay dos sobrecargas para este método, donde puede informar el charset que desea usar para la transformación. Conoció la clase StandardCharsets, del paquete java.nio, que tiene constantes para los charset principales. Finalmente, simuló el problema de los encodings, generando un nuevo string a partir de un constructor cuyos argumentos eran los bytes transformados en el charset y el charset deseado para la transformación. La solución fue asegurar que se aplicará el mismo charset, tanto en la entrada como en la salida.
+
+Las clases Scanner y InputStreamReader tienen sobrecargas de constructor que toman como argumento cual charset se usará para transformar los bytes en strings. De manera análoga a la escritura, la clase PrintWriter también le permite informar cual charset se utilizará para transformar el string en bytes específicos.
 
 
 
