@@ -18,3 +18,20 @@ Ordenar una lista de Cursos usando el método comparing de la clase Comparator, 
 Uso de stream() en nuestra lista de Cursos.
 Filtrar una lista usando el método filter() de stream.
 Usar stream para crear una nueva filtrada y ordenada usando el método collect().
+
+
+# Lo que aprendimos en esta aula:
+
+Crear una lista dentro de una lista de Objetos y obtener los valores de esa sublista usando el método get.
+
+Obtener una lista inmutable usando el método unmodifiableList de la clase Collections.
+
+Ver cómo funcionan las referencias entre listas.
+
+Adicionar valores a una sublista usando el método add().
+
+Ver que la principal diferencia de un LinkedList y ArrayList es que un LinkedList termina siendo más rápido para adicionar valores a una lista en cualquier posición, a diferencia de una ArrayList donde dependiendo de la posición que sea adicionado el valor y dependiendo del tamaño de la lista va terminar siendo más demorado.
+
+Además usando el método get() para obtener algún valor de una posición de un LinkedList termina siendo más demorado que un ArrayList.
+
+Usar un ejemplo práctico para ver esas diferencias en tiempo de ejecución y tomar nuestras propias conclusiones.
