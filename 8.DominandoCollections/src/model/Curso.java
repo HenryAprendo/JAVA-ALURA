@@ -1,13 +1,13 @@
 package model;
 
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.*;
 
 public class Curso {
 	private String nombre;
 	private int tiempo;
 	private List<Aula> claseList = new ArrayList<>();
+	private Collection<Alumno> alumnos = new HashSet<>(); 
+	//private Collection<Alumno> alumnos = new LinkedHashSet<>();  ordena la lista
 	
 	public Curso(String nombre, int tiempo) {
 		this.nombre = nombre;
@@ -49,6 +49,18 @@ public class Curso {
 	
 	public void addAula(Aula clase) {
 		this.claseList.add(clase);
+	}
+	
+	public void addAlumno(Alumno alumno) {
+		this.alumnos.add(alumno);
+	}
+	
+	public boolean verificaAlumno(Alumno alumno) {
+		return this.alumnos.contains(alumno);
+	}
+	
+	public Collection<Alumno> getAlumnos() {
+		return this.alumnos;
 	}
 	
 	public Aula getClase(int index) {

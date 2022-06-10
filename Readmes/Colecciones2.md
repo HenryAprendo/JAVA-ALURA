@@ -53,3 +53,25 @@ Utilizar el método max() de Stream para obtener el valor máximo de una lista.
 Usar el método removeIf() de nuestra interfaz Collection.
 
 Explicar algunas diferencias entre las interfaces Set y List, en la cual la principal sería que un Set no adiciona valores repetidos.
+
+# Lo que aprendimos en esta aula:
+
+Es muy importante sobrescribir el método equals y hashCode de un Set porque así podremos usar con efectividad nuestros métodos contains() y comparar valores usando el método equals.
+
+Verificar valores de un Set.
+
+Encapsular métodos para adicionar valores de una Lista de Set o List para poder hacer una migración de tipo de lista con más facilidad.
+
+
+
+# Lo que aprendimos en esta aula:
+
+Leer valores de una lista usando la interfaz Iterator a través del método next().
+
+Saber el exception que puede dar cuando usamos el método next() de forma incorrecta.
+
+Saber que la interfaz Iterator era una forma antigua de leer los valores de una lista.
+
+Saber que la principal diferencia entre un Set y List es que el primero no guarda registros duplicados, además que saber que la forma de leer esos valores además de usar un for, es a través de la interfaz Iterator
+
+Reconocer que un Set y List forman parte de la interfaz Collection y por ello podemos usar los métodos que contiene ella.
