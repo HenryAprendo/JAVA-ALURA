@@ -35,3 +35,21 @@ Ver que la principal diferencia de un LinkedList y ArrayList es que un LinkedLis
 Además usando el método get() para obtener algún valor de una posición de un LinkedList termina siendo más demorado que un ArrayList.
 
 Usar un ejemplo práctico para ver esas diferencias en tiempo de ejecución y tomar nuestras propias conclusiones.
+
+
+
+# Lo que aprendimos en esta aula:
+
+Usar un HashSet adicionando valores en un Set de String usando el método add().
+
+Leer un HashSet e imprimir sus valores en consola.
+
+Entender el árbol de jerarquías de la Clase Collection.
+
+Usar la interfaz Collection para generalizar una lista de HashSet así luego de acuerdo a las necesidades migrar de Set para List.
+
+Utilizar el método max() de Stream para obtener el valor máximo de una lista.
+
+Usar el método removeIf() de nuestra interfaz Collection.
+
+Explicar algunas diferencias entre las interfaces Set y List, en la cual la principal sería que un Set no adiciona valores repetidos.
