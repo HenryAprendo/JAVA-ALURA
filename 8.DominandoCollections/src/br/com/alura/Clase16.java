@@ -22,7 +22,7 @@ public class Clase16 {
 		curso1.addAlumno(alumno5);
 		curso1.addAlumno(alumno6);
 		
-		//curso1.getAlumnos().forEach(alumno -> System.out.println(alumno));
+		curso1.getAlumnos().forEach(alumno -> System.out.println(alumno));
 		
 		Iterator<Alumno> alumnoIterator = curso1.getAlumnos().iterator();
 		

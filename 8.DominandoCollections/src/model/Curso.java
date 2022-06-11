@@ -8,6 +8,9 @@ public class Curso {
 	private List<Aula> claseList = new ArrayList<>();
 	private Collection<Alumno> alumnos = new HashSet<>(); 
 	//private Collection<Alumno> alumnos = new LinkedHashSet<>();  ordena la lista
+	private Map<String, Alumno> alumnoMap = new HashMap<>();
+	//private Map<String, Alumno> alumnoMap = new LinkedHashMap()<>();
+	
 	
 	public Curso(String nombre, int tiempo) {
 		this.nombre = nombre;
@@ -53,8 +56,13 @@ public class Curso {
 	
 	public void addAlumno(Alumno alumno) {
 		this.alumnos.add(alumno);
+		this.alumnoMap.put(alumno.getCodigo(), alumno);
 	}
 	
+	public Map<String, Alumno> getAlumnoMap() {
+		return this.alumnoMap;
+	}
+
 	public boolean verificaAlumno(Alumno alumno) {
 		return this.alumnos.contains(alumno);
 	}
