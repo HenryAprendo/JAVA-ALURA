@@ -77,16 +77,51 @@ public class ProductoController {
 	}
 
 	public void guardar(Map<String, String> producto) throws SQLException {
-
-		Connection con = new ConnectionFactory().recuperaConexion();
+		String nombre = producto.get("NOMBRE");
+		String descripcion = producto.get("DESCRIPCION");
+		Integer cantidad = Integer.valueOf(producto.get("CANTIDAD"));
+		Integer maximoCantidad = 50;
+		
+		ConnectionFactory factory = new ConnectionFactory();
+		Connection con = factory.recuperaConexion();
+		con.setAutoCommit(false);
+		//setAutoCommit nos permite tomar control de la transacción que tiene la jdbc, de tal forma que si por alguna razón ocurre un error la 
+		//la transacción no se va a hacer de forma incompleta, dejando al aire el resto de productos. Y por tanto no saldra en la 
+		//base de datos.
+		
+		
+		//Evitando la sql injection con preparedStatement
 		PreparedStatement statement = con.prepareStatement("INSERT INTO PRODUCTO "
 				+ "(nombre, descripcion, cantidad)"
 				+ "VALUES (?,?,?)",
 				Statement.RETURN_GENERATED_KEYS);
+			
+		//Control de transacciones. Guardamos todo o no se guarda nada.
+		try {
+			do {
+				//Garantiza que solo se insertara una cantidad de 50, si es mayor se ejecutara una nueva inserción con el resto.
+				int cantidadParaGuardar = Math.min(cantidad, maximoCantidad);		//Toma entre dos valores el menor
+				ejecutaRegistro(nombre, descripcion, cantidadParaGuardar, statement);
+				cantidad -= maximoCantidad;
+			}while(cantidad > 0);
+			
+			con.commit();
+		}catch(Exception e) {
+			con.rollback();
+		}
 		
-		statement.setString(1, producto.get("NOMBRE"));
-		statement.setString(2, producto.get("DESCRIPCION"));
-		statement.setInt(3, Integer.valueOf( producto.get("CANTIDAD") ));
+		statement.close();
+		con.close();
+	}
+
+	private void ejecutaRegistro(String nombre, String descripcion, Integer cantidad, PreparedStatement statement) throws SQLException {
+		
+		if (cantidad < 50) throw new RuntimeException("Ocurrio un error");	
+		//simula un error en una transaccion.
+					
+		statement.setString(1, nombre);
+		statement.setString(2, descripcion);
+		statement.setInt(3, cantidad);
 				
 		statement.execute();
 		//los string para MYSQL son con comillas simples ' "string" ';
