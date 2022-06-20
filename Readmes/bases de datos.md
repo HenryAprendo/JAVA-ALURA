@@ -26,3 +26,20 @@ El pool de conexiones controla la cantidad de conexiones abiertas entre la aplic
 Es normal que haya un mínimo y un máximo de conexiones.
 De la misma forma que hay, en JDBC, una interfaz para representar la conexión (java.sql.Connection), también hay una interfaz que representa el pool de conexiones (javax.sql.DataSource);
 C3P0 es una implementación Java de un pool de conexiones.
+
+# Lo que aprendimos en esta aula:
+
+Para cada tabla del modelo tenemos una clase de dominio;
+Para la tabla de producto tenemos una clase Producto asociada.
+Los objetos del tipo Producto representan un registro de la tabla.
+Para acceder a la tabla vamos a utilizar el estándar llamado Data Access Object (DAO);
+Para cada clase de dominio hay un DAO asociado. Por ejemplo, la clase Producto posee la clase ProductoDAO.
+Todos los métodos JDBC relacionados al producto deben estar encapsulados en ProductoDAO.
+Una aplicación es escrita en capas;
+Las capas más conocidas son las de view, controller, modelo y persistencia, que componen el estándar MVC.
+El flujo de una requisición entre las capas es el siguiente;
+view <--> controller <--> persistenciaCOPIA EL CÓDIGO
+
+En este curso utilizamos una aplicación con las views y los controllers ya creados y enfocamos en la capa de persistencia y modelo;
+No es una buena práctica dejar los detalles de implementación de una capa en otras que no tienen esta responsabilidad (por ejemplo la capa de controller lanzar una SQLException);
+Aquí estamos aprendiendo con una aplicación desktop embebida, pero hay otros tipos de aplicaciones con otros tipos de view, como html para aplicaciones web.
