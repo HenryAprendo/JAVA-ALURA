@@ -7,22 +7,20 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 import com.alura.jdbc.controller.CategoriaController;
-import com.alura.jdbc.controller.ProductoController;
 
 public class ReporteFrame extends JFrame {
+
     private static final long serialVersionUID = 1L;
 
     private JTable tablaReporte;
     private DefaultTableModel modelo;
 
     private CategoriaController categoriaController;
-    private ProductoController productoController;
-
+    
     public ReporteFrame(ControlDeStockFrame controlDeStockFrame) {
         super("Reporte de produtos del stock");
 
         this.categoriaController = new CategoriaController();
-        this.productoController = new ProductoController();
 
         Container container = getContentPane();
         setLayout(null);
@@ -35,7 +33,6 @@ public class ReporteFrame extends JFrame {
         modelo.addColumn("");
         modelo.addColumn("");
         modelo.addColumn("");
-        modelo.addColumn("");
 
         cargaReporte();
 
@@ -45,42 +42,19 @@ public class ReporteFrame extends JFrame {
     }
 
     private void cargaReporte() {
-        var contenido = categoriaController.cargaReporte();
-        
-        contenido.forEach(categoria -> {
-        
-        	modelo.addRow(new Object[] {categoria});
-        		
-        	var productos = categoria.getProductos();
-        	
-        	productos.forEach( producto -> {
-        		modelo.addRow(
-        			new Object[] { 
-        				"", 
-        				producto.getNombre(),
-        				producto.getCantidad() 
-        			}
-        		);
-        	});    
-        	        	
+        var categorias = categoriaController.cargaReporte();
+
+        categorias.forEach(categoria -> {
+            modelo.addRow(new Object[] { categoria });
+            
+            var productos = categoria.getProductos();
+            
+            productos.forEach(producto -> modelo.addRow(new Object[] {
+                    "",
+                    producto.getNombre(),
+                    producto.getCantidad()
+            }));
         });
-        
-        
-        
-        
     }
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

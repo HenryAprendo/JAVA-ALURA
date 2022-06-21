@@ -20,16 +20,30 @@ public class ProductoDAO {
 	}
 
 	public void guardar(Producto producto) {
+
 		try (con) {
 
 			// Evitando la sql injection con preparedStatement
 			final PreparedStatement statement = con.prepareStatement(
-					"INSERT INTO PRODUCTO " + "(nombre, descripcion, cantidad)" + "VALUES (?,?,?)",
+					"INSERT INTO PRODUCTO " + "(nombre, descripcion, cantidad, categoria_id)" + "VALUES (?,?,?,?)",
 					Statement.RETURN_GENERATED_KEYS);
 
 			// Control de transacciones. Guardamos todo o no se guarda nada.
 			try (statement) {
-				ejecutaRegistro(producto, statement);
+				statement.setString(1, producto.getNombre());
+				statement.setString(2, producto.getDescripcion());
+				statement.setInt(3, producto.getCantidad());
+				statement.setInt(4, producto.getCategoriaId());
+				statement.execute();
+
+				final ResultSet resultSet = statement.getGeneratedKeys();
+
+				try (resultSet) {
+					while (resultSet.next()) {
+						producto.setId(resultSet.getInt(1));
+						System.out.println(String.format("Fue insertado el producto %s", producto));
+					}
+				}
 			}
 
 		} catch (SQLException e) {
@@ -38,124 +52,128 @@ public class ProductoDAO {
 
 	}
 
-	private void ejecutaRegistro(Producto producto, PreparedStatement statement) throws SQLException {
-
-		statement.setString(1, producto.getNombre());
-		statement.setString(2, producto.getDescripcion());
-		statement.setInt(3, producto.getCantidad());
-		statement.execute();
-
-		final ResultSet resultSet = statement.getGeneratedKeys();
-
-		try (resultSet) {
-			while (resultSet.next()) {
-				producto.setId(resultSet.getInt(1));
-				System.out.println(String.format("Fue insertado el producto %s", producto));
-			}
-		}
-
-		/**
-		 * Implementación de try with resources, para garantizar el cierre de conexiones
-		 * o recursos de forma mas segura.
-		 * 
-		 * %s indica string %d indica digito
-		 * 
-		 */
-	}
+	/**
+	 * Implementación de try with resources, para garantizar el cierre de conexiones
+	 * o recursos de forma mas segura.
+	 * 
+	 * %s indica string %d indica digito
+	 * 
+	 */
 
 	public List<Producto> listar() {
-		
+
 		// 5. Almacenamos los productos, cada uno sera una lista de Map
 		List<Producto> resultado = new ArrayList<>();
-		
+
 		final Connection con = new ConnectionFactory().recuperaConexion();
-		
-		try(con){
-							
+
+		try (con) {
+
 			// 2. crear los statement para utilizar los query de mysql (SELECT, etc) con los
 			// que hacemos la consulta
-			final PreparedStatement statement = con.prepareStatement("SELECT ID, NOMBRE, DESCRIPCION, CANTIDAD FROM PRODUCTO");
-			
-			try(statement){
-				
+			final PreparedStatement statement = con
+					.prepareStatement("SELECT ID, NOMBRE, DESCRIPCION, CANTIDAD FROM PRODUCTO");
+
+			try (statement) {
+
 				// 3. devuelve true si es una lista
 				statement.execute();
-		
+
 				// 4. obtenemos la lista de la solicitud
 				final ResultSet resultSet = statement.getResultSet();
-		
-				try(resultSet){
+
+				try (resultSet) {
 					// 6. iteramos sobre cada producto y lo guardamos en la Lista de Maps
 					while (resultSet.next()) {
-						Producto fila = new Producto(resultSet.getInt("ID"),
-								resultSet.getString("NOMBRE"), 
-								resultSet.getString("DESCRIPCION"),
-								resultSet.getInt("CANTIDAD"));
-						
+						Producto fila = new Producto(resultSet.getInt("ID"), resultSet.getString("NOMBRE"),
+								resultSet.getString("DESCRIPCION"), resultSet.getInt("CANTIDAD"));
+
 						resultado.add(fila);
 					}
 				}
-		
-				return resultado;
+
 			}
-		}catch(SQLException e) {
+		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
-		
+
+		return resultado;
 	}
-	
+
 	public int eliminar(Integer id) {
-		
+
 		try {
-			
+
 			final PreparedStatement statement = con.prepareStatement("DELETE FROM PRODUCTO WHERE ID = ?");
-			try(statement){
+			try (statement) {
 				statement.setInt(1, id);
 				statement.execute();
 				int updateCount = statement.getUpdateCount();
 				return updateCount;
 			}
-			
-		}catch(SQLException e) {
-			throw new RuntimeException(e);
-		}
-	}
 
-	public int modificar(Producto producto) {
-		
-		try {
-				
-	        final PreparedStatement statement = con.prepareStatement(
-	                "UPDATE PRODUCTO SET "
-	                + " NOMBRE = ?, "
-	                + " DESCRIPCION = ?,"
-	                + " CANTIDAD = ?"
-	                + " WHERE ID = ?");
-	        
-			try(statement){
-				statement.setString(1, producto.getNombre());
-				statement.setString(2, producto.getDescripcion());
-				statement.setInt(3, producto.getCantidad());
-				statement.setInt(4, producto.getId());
-			
-				statement.execute();
-			
-				int updateCount = statement.getUpdateCount();
-			
-				return updateCount;
-			}
-			
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
 	}
 
+	public int modificar(Producto producto) {
+
+		try {
+
+			final PreparedStatement statement = con.prepareStatement(
+					"UPDATE PRODUCTO SET " + " NOMBRE = ?, " + " DESCRIPCION = ?," + " CANTIDAD = ?" + " WHERE ID = ?");
+
+			try (statement) {
+				statement.setString(1, producto.getNombre());
+				statement.setString(2, producto.getDescripcion());
+				statement.setInt(3, producto.getCantidad());
+				statement.setInt(4, producto.getId());
+
+				statement.execute();
+
+				int updateCount = statement.getUpdateCount();
+
+				return updateCount;
+			}
+
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	public List<Producto> listar(Integer categoriaId) {
+
+		List<Producto> resultado = new ArrayList<>();
+
+		try (con) {
+			
+			var querySelect = "SELECT ID, NOMBRE, DESCRIPCION, CANTIDAD FROM PRODUCTO WHERE CATEGORIA_ID = ?";
+			
+			final PreparedStatement statement = con.prepareStatement(querySelect);
+
+			try (statement) {
+
+				statement.setInt(1, categoriaId);
+				statement.execute();
+				final ResultSet resultSet = statement.getResultSet();
+
+				try (resultSet) {
+					while (resultSet.next()) {
+						Producto fila = new Producto(resultSet.getInt("ID"), resultSet.getString("NOMBRE"),
+								resultSet.getString("DESCRIPCION"), resultSet.getInt("CANTIDAD"));
+
+						resultado.add(fila);
+					}
+				}
+
+			}
+
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+
+		return resultado;
+	}
+
 }
-
-
-
-
-
-
-
-

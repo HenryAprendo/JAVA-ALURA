@@ -6,6 +6,7 @@ public class Producto {
 	private String nombre;
 	private String descripcion;
 	private Integer cantidad;
+	private Integer categoriaId;
 	
 	public Producto( String nombre, String descripcion,  Integer cantidad) {
 		this.nombre = nombre;
@@ -18,6 +19,12 @@ public class Producto {
 		this.nombre = nombre;
 		this.descripcion = descripcion;
 		this.cantidad = this.cantidad;
+	}
+
+	public Producto(int id, String nombre, int cantidad) {
+		this.id = id;
+		this.nombre = nombre;
+		this.cantidad = cantidad;
 	}
 
 	public String getNombre() {
@@ -39,6 +46,15 @@ public class Producto {
 	public void setId(int id) {
 		this.id = id;
 	}
+	
+	public int getCategoriaId() {
+		
+		return this.getCategoriaId();
+	}
+	
+	public void setCategoriaId(Integer categoriaId) {
+		this.categoriaId = categoriaId;		
+	}
 
 	@Override
 	public String toString() {
@@ -49,5 +65,6 @@ public class Producto {
 				this.descripcion,
 				this.cantidad);
 	}
+
 	
 }
