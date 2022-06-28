@@ -4,9 +4,6 @@ import java.awt.Color;
 import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.SQLException;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Optional;
 
 import javax.swing.JButton;
@@ -215,6 +212,7 @@ public class ControlDeStockFrame extends JFrame {
                     modelo.removeRow(tabla.getSelectedRow());
 
                     JOptionPane.showMessageDialog(this, cantidadEliminada + " Item eliminado con éxito!");
+                    
                 }, () -> JOptionPane.showMessageDialog(this, "Por favor, elije un item"));
     }
 
