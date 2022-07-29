@@ -1,0 +1,1 @@
+SELECT nombre, matricula FROM tabla_de_vendedores;
